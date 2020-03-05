@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Learn Gatsby by Building`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Pandas Being Pandas`,
+    description: `Pandas are the cutest and we should celebrate everything they do!`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

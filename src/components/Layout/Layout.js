@@ -1,19 +1,56 @@
 import React from "react"
-import { Link } from "gatsby"
+import { css } from "@emotion/core"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { rhythm } from "../../utils/typography"
+
 const NavLink = props => (
   <li style={{ marginRight: `10px` }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
 
-export default ({ children }) => (
-  <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
-    <h3>Awesome Gatsby Site</h3>
-    <ul style={{ listStyle: `none`, display: `flex` }}>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
-    </ul>
-    {children}
-  </div>
-)
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `
+  )
+  return (
+    <div
+      css={css`
+        margin: 0 auto;
+        max-width: 700px;
+        padding: ${rhythm(2)};
+        padding-top: ${rhythm(1.5)};
+      `}
+    >
+      <Link to={`/`}>
+        <h3
+          css={css`
+            margin-bottom: ${rhythm(2)};
+            display: inline-block;
+            font-style: normal;
+          `}
+        >
+          {data.site.siteMetadata.title}
+        </h3>
+      </Link>
+      <Link
+        to={`/about/`}
+        css={css`
+          float: right;
+        `}
+      >
+        About
+      </Link>
+      {children}
+    </div>
+  )
+}
