@@ -6,7 +6,8 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
+      description: `Keep your descriptions short please!`,
     },
     {
       name: 'slug',
@@ -18,7 +19,7 @@ export default {
       }
     },
     {
-      title: 'Default variant',
+      title: 'Default Variant',
       name: 'defaultProductVariant',
       type: 'productVariant'
     },

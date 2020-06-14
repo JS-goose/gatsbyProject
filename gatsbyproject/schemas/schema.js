@@ -8,6 +8,7 @@ import blockContent from './blockContent'
 import category from './category'
 import product from './product'
 import vendor from './vendor'
+import bacon from './bacon'
 import productVariant from './productVariant'
 
 import localeString from './locale/String'
@@ -24,6 +25,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     product,
+    bacon,
     vendor,
     category,
     // When added to this list, object types can be used as
