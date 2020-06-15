@@ -1,13 +1,13 @@
 export default {
-  name: "bacon",
-  title: "BACON ARE GUD!",
+  name: "customers",
+  title: "Customer Listings",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title For Bacon",
+      title: "Customer Name",
       type: "string",
-      description: "How many bacon you want?",
+      description: "Company name, not individual",
     },
     {
       name: "slug",
@@ -17,10 +17,11 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      description: 'URL ending - ex home.com/customer'
     },
     {
-      title: "Put All Bacons here?",
-      name: "defaultBaconBacons",
+      title: "Active Customer?",
+      name: "activeCustomers",
       type: "boolean",
     },
   ],
